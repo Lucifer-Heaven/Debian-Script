@@ -1,1 +1,0 @@
-../Linux_script/Auto_update_install.sh
