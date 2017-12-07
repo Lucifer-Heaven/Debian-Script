@@ -1,0 +1,1 @@
+../scriptgit/.zshrc
