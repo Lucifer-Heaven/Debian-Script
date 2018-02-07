@@ -18,6 +18,7 @@ apt-get install lrzsz -y
 
 apt-get install unzip -y
 apt-get install sudo -y
+apt-get install vim -y
 
 echo '/bin/zsh' >> /etc/shells
 
