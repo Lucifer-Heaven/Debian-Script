@@ -8,7 +8,7 @@ apt-get remove vim* -y
 # sometimes here's pre-installed tidy-vi,but the hot key is diff with normal vim
 
 echo "install basic tool"
-apt-get install vim sudo unzip -y
+apt-get install vim sudo unzip tar -y
 
 echo "install version control"
 apt-get install git mercurial  -y
