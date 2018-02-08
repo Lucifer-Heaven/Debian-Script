@@ -1,9 +1,9 @@
 # Debian-Script
-# Who are as lazy as me need this one step setup script to leave computer alone. 
+# Who are as lazy as me need this one step setup script to leave computer install alone. 
 
 # Auto_update_install.sh
 
-you can take a rest while it setup by itself for 5-10 mins 
+you can take a rest while it setting up by itself for 5-10 mins 
 
 ## based on different environment,this script will install the most basic needs:
 > - vim 
@@ -36,4 +36,4 @@ you can take a rest while it setup by itself for 5-10 mins
 > 
 > - lrzsz
 >
-> easy tool to let you upload/download througt terminal.**not good enough for large file**
+> easy tool to let you upload/download througt terminal. **not good enough for large file**
