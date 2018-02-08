@@ -5,13 +5,13 @@
 apt-get update -y
 apt-get autoremove -y
 apt-get remove vim* -y
-# sometimes here's pre-installed tidy-vi,but the hot key is diff with normal vim
+# sometimes here's pre-installed tiny-vim,but the hot key is diff with normal vim
 
 echo "install basic tool"
 apt-get install vim sudo unzip tar -y
 
 echo "install version control"
-apt-get install git mercurial  -y
+apt-get install mercurial  -y
 
 echo "install oh my zsh"
 apt-get install zsh -y
