@@ -18,10 +18,6 @@ you can take a rest while it setting up by itself for 5-10 mins
 >
 > allow you unpack/pack zip,gz,tar file
 >
-> - github
->
->  ~~**no definition**~~
->
 > - mercurial
 > 
 >  free private personal version control 
