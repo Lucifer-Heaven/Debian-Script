@@ -36,4 +36,4 @@ you can take a rest while it setting up by itself for 5-10 mins
 > 
 > - lrzsz
 >
-> easy tool to let you upload/download througt terminal. **not good enough for large file**
+> easy tool to let you upload/download through terminal. **not good enough for large file**
