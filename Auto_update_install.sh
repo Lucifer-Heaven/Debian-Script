@@ -26,5 +26,7 @@ apt-get install lrzsz -y
 
 echo '/bin/zsh' >> /etc/shells
 
-echo "change zsh as default"
-chsh -s /bin/zsh
+# it cant be done
+#echo "change zsh as default"
+#chsh -s /bin/zsh
+
