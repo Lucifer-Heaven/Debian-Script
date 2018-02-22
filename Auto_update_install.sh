@@ -16,7 +16,7 @@ apt-get install mercurial  -y
 echo "install oh my zsh"
 apt-get install zsh -y
 #sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-#sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 echo "install tree"
 apt-get install tree -y
@@ -26,5 +26,8 @@ apt-get install lrzsz -y
 
 echo '/bin/zsh' >> /etc/shells
 
-echo "change zsh as default"
+echo "change zsh as default with oh my zsh"
 chsh -s /bin/zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+reboot
