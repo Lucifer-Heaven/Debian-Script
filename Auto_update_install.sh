@@ -4,14 +4,14 @@
 
 apt-get update -y
 apt-get autoremove -y
-apt-get remove vim* -y
+#apt-get remove vim* -y
 # sometimes here's pre-installed tiny-vim,but the hot key is diff with normal vim
 
 echo "install basic tool"
-apt-get install vim sudo unzip tar -y
+apt-get install sudo unzip tar -y
 
-echo "install version control"
-apt-get install mercurial  -y
+#echo "install version control"
+#apt-get install mercurial  -y
 
 
 echo "install tree"
@@ -27,3 +27,11 @@ chsh -s /bin/zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 reboot
+<<<<<<< HEAD
+=======
+
+# it cant be done
+#echo "change zsh as default"
+#chsh -s "/bin/zsh"
+
+>>>>>>> 2184db159e10cf6cb0e35bd015d5ceff771aeadb
