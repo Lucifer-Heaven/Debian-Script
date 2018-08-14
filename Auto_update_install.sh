@@ -26,7 +26,6 @@ apt-get install lrzsz -y
 
 echo '/bin/zsh' >> /etc/shells
 
-<<<<<<< HEAD
 echo "change zsh as default with oh my zsh"
 chsh -s /bin/zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -37,4 +36,3 @@ reboot
 #echo "change zsh as default"
 #chsh -s "/bin/zsh"
 
->>>>>>> 7ca100ac14fc6bf1914cf937ffe4b8c314ef966d
