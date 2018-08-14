@@ -31,7 +31,7 @@ chsh -s /bin/zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 reboot
-=======
+
 # it cant be done
 #echo "change zsh as default"
 #chsh -s "/bin/zsh"
