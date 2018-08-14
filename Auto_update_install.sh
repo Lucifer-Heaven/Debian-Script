@@ -27,17 +27,3 @@ chsh -s /bin/zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 reboot
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 2184db159e10cf6cb0e35bd015d5ceff771aeadb
-
-# it cant be done
-#echo "change zsh as default"
-#chsh -s "/bin/zsh"
-
-<<<<<<< HEAD
->>>>>>> 2184db159e10cf6cb0e35bd015d5ceff771aeadb
-=======
->>>>>>> 2184db159e10cf6cb0e35bd015d5ceff771aeadb
