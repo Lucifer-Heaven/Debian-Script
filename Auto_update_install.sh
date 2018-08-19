@@ -20,6 +20,9 @@ apt-get install tree -y
 echo "install lrzsz"
 apt-get install lrzsz -y
 
+
+echo "install zsh then setup"
+apt-get install zsh
 echo '/bin/zsh' >> /etc/shells
 
 echo "change zsh as default with oh my zsh"
