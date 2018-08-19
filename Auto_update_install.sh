@@ -8,7 +8,7 @@ apt-get autoremove -y
 # sometimes here's pre-installed tiny-vim,but the hot key is diff with normal vim
 
 echo "install basic tool"
-apt-get install sudo unzip tar -y
+apt-get install unzip tar net-tools -y
 
 #echo "install version control"
 #apt-get install mercurial  -y
@@ -20,6 +20,8 @@ apt-get install tree -y
 echo "install lrzsz"
 apt-get install lrzsz -y
 
+echo "install nginx"
+apt-get install nginx
 
 echo "install zsh then setup"
 apt-get install zsh
