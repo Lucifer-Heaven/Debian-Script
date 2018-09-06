@@ -21,10 +21,10 @@ echo "install lrzsz"
 apt-get install lrzsz -y
 
 echo "install nginx"
-apt-get install nginx
+apt-get install nginx -y
 
 echo "install zsh then setup"
-apt-get install zsh
+apt-get install zsh -y
 echo '/bin/zsh' >> /etc/shells
 
 echo "change zsh as default with oh my zsh"
