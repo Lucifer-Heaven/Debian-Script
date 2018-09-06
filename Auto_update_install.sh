@@ -29,6 +29,6 @@ echo '/bin/zsh' >> /etc/shells
 
 echo "change zsh as default with oh my zsh"
 chsh -s /bin/zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 reboot
