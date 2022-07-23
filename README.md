@@ -1,10 +1,5 @@
 # Debian-Script
-# Who are as lazy as me need this one step setup script to leave computer install alone.
-
-# Auto_update_install.sh
-
-you can take a rest while it setting up by itself for 5-10 mins
-
+11.4 bullseye
 ## package list
 
 ### Auto_update_install:
@@ -54,4 +49,11 @@ OR
 ```bash
 # name zshrc like `.zshrc-Darwin`, `.zshrc-Linux`
 source "${ZDOTDIR:-${HOME}}/.zshrc-`uname`"
+```
+
+[how to sudo echo](https://askubuntu.com/questions/103643/cannot-echo-hello-x-txt-even-with-sudo)
+```bash
+sudo bash -c 'echo "hello" > f.txt'
+echo "hello" | sudo tee f.txt  # add -a for append (>>)
+
 ```
