@@ -31,18 +31,17 @@
 
 ## Package list
 
-> needs install in CLI mode before clone:
+> needs to be installed before clone:
 >
-> ```bash 
+> ```bash
 > $ su
-> 
+>
 > # apt update && apt install sudo git -y && echo “username ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers && exit
+> $ git clone https://github.com/luc1fev/Debian-Script.git
+> # username:Lucifer-Heaven
+> # token:*********
 > ```
-> 
-> ```bash 
-> wget 
-> ```
-
+>
 
 ### Auto_update_install:
 

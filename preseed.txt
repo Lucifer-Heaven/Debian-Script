@@ -235,18 +235,18 @@ base-config tzconfig/choose_country_zone/US select Pacific
 
 # To preseed the root password, you have to put it in the clear in this
 # file. That is not a very good idea, use caution!
-passwd passwd/root-password password lucifer
-passwd passwd/root-password-again password lucifer
+passwd passwd/root-password password username
+passwd passwd/root-password-again password username
 
 # If you want to skip creation of a normal user account.
 #passwd passwd/make-user boolean false
 
 # Alternatively, you can preseed the user's name and login.
 #passwd passwd/user-fullname string Debian User
-passwd passwd/username string lucifer
+passwd passwd/username string username
 # And their password, but use caution!
-passwd passwd/user-password password lucifer
-passwd passwd/user-password-again password lucifer
+passwd passwd/user-password password username
+passwd passwd/user-password-again password username
 
 #### Apt setup.
 

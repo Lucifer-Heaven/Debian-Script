@@ -11,5 +11,5 @@ cp ~/vim-colors-solarized/colors/ /.vim/
 rm vim-colors-solarized
 
 # oh-my-zsh
-echo "download personal oh-my-zsh config"
-wget ""
+echo "copy personal oh-my-zsh config"
+cp
