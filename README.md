@@ -1,12 +1,47 @@
 # Debian-Script
 11.4 bullseye
-## package list
+
+## Todo
+
+- [ ] Preconf file
+
+- [ ] vim theme
+
+  - [ ] colne & setup
+
+- [ ] zsh
+
+  - [ ] Setup
+
+  - [ ] oh my zsh
+
+    - [ ] clone & setup
+
+       [installation cmd from GitHub  repo](https://github.com/ohmyzsh/ohmyzsh#basic-installation)
+
+    - [ ] [setup zsh without root](https://stackoverflow.com/questions/15293406/install-zsh-without-root-access)
+
+      better to use bash instead zsh as default
+
+- [ ] personal zsh && vim config file
+
+  - [ ] Based on diff system
+    - [ ] macOS
+    - [ ] Debian
+
+## Package list
+
+> needs install in CLI mode before clone:
+>
+> > apt install sudo -y && echo ‘username ALL=(ALL) NOPASSWD:ALL’ >> /etc/sudoers
 
 ### Auto_update_install:
 
 - vim
 
-editor
+editor instead of vi
+
+- [ ] Alias vim with vi/ uninstall vi??
 
 - unzip & tar
 
@@ -61,3 +96,9 @@ $ sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```
 
 - [Preconfiguration File Example](https://www.debian.org/releases/sarge/i386/apcs01.html.en)
+
+- [VM fusion starts headless](https://stackoverflow.com/questions/62023721/is-it-possible-to-power-on-a-vmware-fusion-virtual-machine-without-opening-the-v)
+
+```bash
+vmrun start full/path/of/your/virtual/machine/bundle nogui
+```
