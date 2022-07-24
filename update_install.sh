@@ -6,7 +6,7 @@ sudo apt update -yqq
 # apt-get remove vim* -y
 
 echo "install vim git"
-sudo apt-get install vim git -yqq
+sudo apt install vim git -yqq
 
 # sudo apt install net-tools unzip
 
@@ -24,8 +24,8 @@ sudo apt install zsh -yqq
 sudo bash -c 'echo "/bin/zsh" >> /etc/shells'
 
 echo "change zsh as default with oh my zsh"
-sudo chsh -s /bin/zsh
+sudo chsh -s $(which zsh)
 echo "install oh my zsh"
 sudo sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-reboot
+sudo reboot

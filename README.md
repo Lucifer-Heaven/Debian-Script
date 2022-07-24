@@ -33,7 +33,16 @@
 
 > needs install in CLI mode before clone:
 >
-> > apt install sudo -y && echo ‘username ALL=(ALL) NOPASSWD:ALL’ >> /etc/sudoers
+> ```bash 
+> $ su
+> 
+> # apt update && apt install sudo git -y && echo “username ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers && exit
+> ```
+> 
+> ```bash 
+> wget 
+> ```
+
 
 ### Auto_update_install:
 
