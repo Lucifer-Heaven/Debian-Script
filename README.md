@@ -67,7 +67,7 @@ list file as tree view
 
 easy tool to let you upload/download through terminal. **not good enough for large file**
 
-## some helpful resources
+## Some Helpful Resources
 
 - [How to configure .zshrc for specfic os](https://unix.stackexchange.com/questions/252166/how-to-configure-zshrc-for-specfic-os)
 
@@ -98,7 +98,7 @@ sudo bash -c 'echo "hello" > f.txt'
 echo "hello" | sudo tee f.txt  # add -a for append (>>)
 ```
 
-[enable clipboard on virtualbox](https://linuxhint.com/enable-copy-paste-virtualbox-host/)
+- [enable clipboard on virtualbox](https://linuxhint.com/enable-copy-paste-virtualbox-host/)
 ```bash
 $ sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```
@@ -109,19 +109,4 @@ $ sudo apt install build-essential dkms linux-headers-$(uname -r)
 
 ```bash
 vmrun start full/path/of/your/virtual/machine/bundle nogui
-```
-# draft
-
-## oh my zsh
-
-after installed oh my zsh
-cp .zshrc ~/.zshrc
-add plugins for debian 11
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
-```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
