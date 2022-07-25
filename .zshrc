@@ -27,7 +27,6 @@ export ZSH="/Users/cd/.oh-my-zsh"
 
 #ZSH_THEME="random"
 
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -98,8 +97,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 #############################################################################################
 
-
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -158,7 +155,6 @@ unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
-
 #must add to run ruby app##############
 PATH=$PATH:$(ruby -e 'puts Gem.bindir')
 ######################################
@@ -187,11 +183,8 @@ export PATH="/usr/local/opt/node@16/bin:$PATH"
 # For compilers to find node@16 you may need to set:
 #   export LDFLAGS="-L/usr/local/opt/node@16/lib"
 #   export CPPFLAGS="-I/usr/local/opt/node@16/include"
-
   ;;
   Linux)
-
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -260,7 +253,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -307,5 +299,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 ;;
-
 esac
