@@ -1,3 +1,4 @@
+#######
 case `uname` in
   Darwin)
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -300,3 +301,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 ;;
 esac
+#########
