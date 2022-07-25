@@ -110,3 +110,18 @@ $ sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```bash
 vmrun start full/path/of/your/virtual/machine/bundle nogui
 ```
+# draft
+
+## oh my zsh
+
+after installed oh my zsh
+cp .zshrc ~/.zshrc
+add plugins for debian 11
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
