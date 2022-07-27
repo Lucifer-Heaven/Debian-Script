@@ -5,64 +5,49 @@
 
 - [ ] Preconf file
 
-- [ ] vim theme
-
-  - [ ] colne & setup
-
-- [ ] zsh
-
-  - [ ] Setup
-
-  - [ ] oh my zsh
-
-    - [ ] clone & setup
-
-       [installation cmd from GitHub  repo](https://github.com/ohmyzsh/ohmyzsh#basic-installation)
-
-    - [ ] [setup zsh without root](https://stackoverflow.com/questions/15293406/install-zsh-without-root-access)
-
-      better to use bash instead zsh as default
-
-- [ ] personal zsh && vim config file
-
-  - [ ] Based on diff system
-    - [ ] macOS
-    - [ ] Debian
-
 ## Package list
 
 > needs to be installed before clone:
 >
+> Change username!
+>
 > ```bash
 > $ su
-># apt update && apt install sudo git -y && echo “username ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers && exit
+> # apt update && apt install sudo git -y && echo "username ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && exit
 > $ git clone https://github.com/luc1fev/Debian-Script.git
+> $ cd Debian-Script
 > ```
-> 
+>
 
 ### Auto_update_install:
 
-- vim
+> installed 
+>
+> - vim
+>
+> editor instead of vi
+>
+> - oh my zsh
+>
+> better powerful command interpreter
 
-editor instead of vi
 
-- [ ] Alias vim with vi/ uninstall vi??
 
-- unzip & tar
+> Comments out
+>
+> - unzip & tar
+>
+> allow you unpack/pack zip,gz,tar file
+>
+> - tree
+>
+> list file as tree view
+>
+> - lrzsz
+>
+> easy tool to let you upload/download through terminal. **not good enough for large file**
 
-allow you unpack/pack zip,gz,tar file
 
-- oh my zsh
-
-better powerful command interpreter
-
-- tree
-
-list file as tree view
-
-- lrzsz
-
-easy tool to let you upload/download through terminal. **not good enough for large file**
 
 ## Some Helpful Resources
 
@@ -107,6 +92,10 @@ $ sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```bash
 vmrun start full/path/of/your/virtual/machine/bundle nogui
 ```
+- [installation cmd from GitHub  repo](https://github.com/ohmyzsh/ohmyzsh#basic-installation)
+- [setup zsh without root](https://stackoverflow.com/questions/15293406/install-zsh-without-root-access)
+
 # Problem
+
 ln local -> git ok
 ln git -> local wrong: no update after pull
