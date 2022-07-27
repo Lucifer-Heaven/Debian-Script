@@ -110,3 +110,6 @@ $ sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```bash
 vmrun start full/path/of/your/virtual/machine/bundle nogui
 ```
+# problem
+ln local -> git ok
+ln git -> local wrong: no update after pull

@@ -3,14 +3,14 @@
 #!/bin/bash
 
 #vim config
-echo "vim config"
+echo "vim config..."
 alias vi='vim'
-echo "download vim config"
-cd ~
-git clone https://github.com/altercation/vim-colors-solarized.git
-
-cp ~/vim-colors-solarized/colors/ /.vim/
-rm vim-colors-solarized
+mkdir -vp ~/.vim/colors
+wget https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim -P ~/.vim/colors/
+echo 'syntax enable
+set background=dark
+set number
+colorscheme solarized ' >> ~/.vimrc
 
 # oh-my-zsh
 echo "copy personal oh-my-zsh config"
