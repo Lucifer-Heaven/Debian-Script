@@ -35,13 +35,10 @@
 >
 > ```bash
 > $ su
->
-> # apt update && apt install sudo git -y && echo “username ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers && exit
+># apt update && apt install sudo git -y && echo “username ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers && exit
 > $ git clone https://github.com/luc1fev/Debian-Script.git
-> # username:Lucifer-Heaven
-> # token:*********
 > ```
->
+> 
 
 ### Auto_update_install:
 
@@ -110,6 +107,6 @@ $ sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```bash
 vmrun start full/path/of/your/virtual/machine/bundle nogui
 ```
-# problem
+# Problem
 ln local -> git ok
 ln git -> local wrong: no update after pull

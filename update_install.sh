@@ -24,8 +24,8 @@ sudo apt install zsh -yqq
 sudo bash -c 'echo "/bin/zsh" >> /etc/shells'
 
 echo "change zsh as default with oh my zsh"
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 echo "install oh my zsh"
-sudo sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo reboot
