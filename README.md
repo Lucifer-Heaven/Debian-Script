@@ -21,8 +21,8 @@
 
 ### Auto_update_install:
 
-> installed 
->
+#### Installed
+
 > - vim
 >
 > editor instead of vi
@@ -33,8 +33,8 @@
 
 
 
-> Comments out
->
+#### Comments out
+
 > - unzip & tar
 >
 > allow you unpack/pack zip,gz,tar file
@@ -47,7 +47,17 @@
 >
 > easy tool to let you upload/download through terminal. **not good enough for large file**
 
+### pip_django_install
 
+Install pip thou apt, 
+
+
+
+### myPerfer
+
+alias vim to vi, clone a color, set vimrc
+
+set zshrc and install 2 plugins 
 
 ## Some Helpful Resources
 
