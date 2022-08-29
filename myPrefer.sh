@@ -10,6 +10,9 @@ wget https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/c
 echo 'syntax enable
 set background=dark
 set number
+set tabstop=2
+set ai
+set ignorecase
 colorscheme solarized ' >> ~/.vimrc
 
 # oh-my-zsh
