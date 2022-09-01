@@ -125,6 +125,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lac="colorls -lA --sd"
 alias rm=trash
+alias ssha="eval '$(ssh-agent -s)' && ssh-add -A"
 
 setopt HIST_IGNORE_DUPS #ignore duplice
 export HISTSIZE=1000000
