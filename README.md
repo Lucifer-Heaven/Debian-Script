@@ -1,9 +1,9 @@
 # Debian-Script
 11.4 bullseye
 
-## Todo
+## ~~Todo~~
 
-- [ ] Preconf file
+- [x] Preconf file
 
 ## Package list
 
