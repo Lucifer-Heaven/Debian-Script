@@ -1,3 +1,13 @@
+# from old version
+# not in used
+# export SSH_KEY_PATH="~/.ssh/rsa_id" ??
+
+# iterm plug-in
+# https://iterm2.com/documentation-shell-integration.html
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# load self defined script
+# fpath=(~/.zsh/completion $fpath)
 #######
 case `uname` in
   Darwin)
@@ -54,7 +64,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -93,6 +103,7 @@ plugins=(
 	sudo
 	vscode
 	z
+# extract: not installed yet
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -230,7 +241,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -272,7 +283,8 @@ plugins=(
 	sudo
 	vscode
 	z
-	)
+	# extract: not installed yet
+)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

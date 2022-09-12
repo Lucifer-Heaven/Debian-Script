@@ -57,7 +57,7 @@ set foldmethod=indent
 set backspace=indent,eol,start
 set ignorecase
 
-" for tabs 
+" for tabs
 " for command mode
 nnoremap <S-Tab> <<
 " for insert mode
