@@ -1,6 +1,6 @@
 # from old version
 # not in used
-# export SSH_KEY_PATH="~/.ssh/rsa_id" ??
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # iterm plug-in
 # https://iterm2.com/documentation-shell-integration.html
@@ -80,9 +80,9 @@ ENABLE_CORRECTION="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-#############################################################################################
+###########################################
 HIST_STAMPS="mm/dd/yyyy"
-#############################################################################################
+###########################################
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -103,8 +103,14 @@ plugins=(
 	sudo
 	vscode
 	z
+	ssh-agent
 # extract: not installed yet
 	)
+
+# come with ssh-agent plugin
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+zstyle :omz:plugins:ssh-agent identities 2022AugDataPiGGogs FG-Leon-GitHub Lucifer-Heaven-GitHub nas
+zstyle :omz:plugins:ssh-agent quiet yes
 
 source $ZSH/oh-my-zsh.sh
 #############################################################################################
@@ -143,10 +149,7 @@ export HISTSIZE=1000000
 # setopt AUTO_PUSHD # 类似 Alias,可以自己记录路径.被 Auto jump 取代
 setopt no_nomatch #可在程序里继续匹配
 setopt SHARE_HISTORY #TTY 共享 history
-#############################################################################################
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+################################################
 
 #mujo
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
@@ -162,28 +165,27 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/usr/local/sbin:$PATH"
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 export GEM_HOME="$HOME/.gem"
+export PATH=$PATH:$(ruby -e 'puts Gem.bindir')
+
 
 unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
-
-#must add to run ruby app##############
-PATH=$PATH:$(ruby -e 'puts Gem.bindir')
-######################################
 source /Users/cd/.gem/gems/colorls-1.4.1/lib/tab_complete.sh
-######################################
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/cd/opt/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/cd/opt/etc/profile.d/conda.sh" ]; then
+        . "/Users/cd/opt/etc/profile.d/conda.sh"
     else
-        export PATH="/opt/anaconda3/bin:$PATH"
+        export PATH="/Users/cd/opt/bin:$PATH"
     fi
 fi
 unset __conda_setup
