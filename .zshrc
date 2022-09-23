@@ -22,7 +22,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/cd/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -174,18 +174,18 @@ export PATH=$PATH:$(ruby -e 'puts Gem.bindir')
 unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
-source /Users/cd/.gem/gems/colorls-1.4.1/lib/tab_complete.sh
+source ~/.gem/gems/colorls-1.4.1/lib/tab_complete.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/cd/opt/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('~/opt/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/cd/opt/etc/profile.d/conda.sh" ]; then
-        . "/Users/cd/opt/etc/profile.d/conda.sh"
+    if [ -f "~/opt/etc/profile.d/conda.sh" ]; then
+        . "~/opt/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/cd/opt/bin:$PATH"
+        export PATH="~/opt/bin:$PATH"
     fi
 fi
 unset __conda_setup
