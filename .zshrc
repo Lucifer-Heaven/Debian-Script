@@ -8,7 +8,7 @@
 
 # load self defined script
 # fpath=(~/.zsh/completion $fpath)
-#######
+##########################################
 case `uname` in
   Darwin)
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -29,12 +29,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-##################################################################################
 # ZSH_THEME="agnoster"
 # it is very nice looking, but the character usually goes wrong when it sperate lines
 # need other font be installed before use this theme
-
-##################################################################################
 
 #ZSH_THEME="random"
 
@@ -80,9 +77,7 @@ ENABLE_CORRECTION="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-###########################################
 HIST_STAMPS="mm/dd/yyyy"
-###########################################
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -92,7 +87,6 @@ HIST_STAMPS="mm/dd/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-#############################################################################################
 plugins=(
 	git
 	zsh-syntax-highlighting
@@ -109,11 +103,10 @@ plugins=(
 
 # come with ssh-agent plugin
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-zstyle :omz:plugins:ssh-agent identities 2022AugDataPiGGogs FG-Leon-GitHub Lucifer-Heaven-GitHub nas
-zstyle :omz:plugins:ssh-agent quiet yes
+# zstyle :omz:plugins:ssh-agent identities 2022AugDataPiGGogs FG-Leon-GitHub Lucifer-Heaven-GitHub nas
+# zstyle :omz:plugins:ssh-agent quiet yes
 
 source $ZSH/oh-my-zsh.sh
-#############################################################################################
 
 # User configuration
 
@@ -123,11 +116,15 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+# # cronttab-e python3 error
+# # https://github.com/alex-my/vimrc#4-%E9%94%99%E8%AF%AF
+# export EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -143,18 +140,24 @@ source $ZSH/oh-my-zsh.sh
 alias lac="colorls -lA --sd"
 alias rm=trash
 alias ssha="eval '$(ssh-agent -s)' && ssh-add -A"
-
+alias vim="mvim -v"
+alias vi=vim
+alias hist="history -100"
+alias gcc='gcc-12'
+alias venv='python3 -m venv venv'
+alias active='source venv/bin/activate && which python3'
+alias aria='aria2c'
 setopt HIST_IGNORE_DUPS #ignore duplice
 export HISTSIZE=1000000
 # setopt AUTO_PUSHD # 类似 Alias,可以自己记录路径.被 Auto jump 取代
 setopt no_nomatch #可在程序里继续匹配
 setopt SHARE_HISTORY #TTY 共享 history
-################################################
 
-#mujo
+# >>>>>>>>>>>> mujo >>>>>>>>>>
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
-export LD_LIBRARY_PATH=‎⁨MK⁩/Users⁩/cd⁩/.mujoco⁩/⁨mujoco200_macos⁩/bin
+export LD_LIBRARY_PATH=MK/Users/cd/.mujoco/mujoco200_macos/bin
 export PATH="$LD_LIBRARY_PATH:$PATH"
+# <<<<<<<<<<<<<<<<<<<
 
 ########
 #prompt_context (){}
@@ -166,20 +169,19 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/usr/local/sbin:$PATH"
 
+# >>>>>>> ruby >>>>>>>
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export GEM_HOME="$HOME/.gem"
 export PATH=$PATH:$(ruby -e 'puts Gem.bindir')
-
+# For compilers to find ruby you may need to set:
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+# <<<<<<<<<<<<<<<<<
 
 unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
 source ~/.gem/gems/colorls-1.4.1/lib/tab_complete.sh
-
-# cronttab-e python3 error
-# https://github.com/alex-my/vimrc#4-%E9%94%99%E8%AF%AF
-export EDITOR=vim
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -203,7 +205,31 @@ export PATH="/usr/local/opt/node@16/bin:$PATH"
 # For compilers to find node@16 you may need to set:
 #   export LDFLAGS="-L/usr/local/opt/node@16/lib"
 #   export CPPFLAGS="-I/usr/local/opt/node@16/include"
+# >>>>>>>>>>>>>>>>>>
+
+# mac has no python2
+alias python=/usr/local/bin/python3
+# <<<<<<<<<<
+
+# >>>> xv6 dep
+#export TOOLPREFIX=x86_64-elf-
+#export QEMU=qemu-system-x86_64
+
+# ncurses << xv6 depend
+# export PATH="/usr/local/opt/ncurses/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/ncurses/lib"
+# export CPPFLAGS="-I/usr/local/opt/ncurses/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/ncurses/lib/pkgconfig"
+# <<<<<<<<<<
+
+# ignore wrong cmd to history
+# https://superuser.com/a/902508
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+
+# >>>> brew 
+export HOMEBREW_NO_AUTO_UPDATE=1
   ;;
+################################################
   Linux)
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
