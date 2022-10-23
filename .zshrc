@@ -4,11 +4,6 @@
 # fpath=(~/.zsh/completion $fpath)
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
-## iterm plug-in
-# https://iterm2.com/documentation-shell-integration.html
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 ##########################################
 case `uname` in
   Darwin)
@@ -55,6 +50,9 @@ plugins=(
 	vscode
 	z
 	ssh-agent
+## iterm plug-in
+# https://iterm2.com/documentation-shell-integration.html
+	iterm2_shell_integration
 # extract: not installed yet
 	)
 
@@ -66,9 +64,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
