@@ -2,6 +2,8 @@
 #
 # load self defined script
 # fpath=(~/.zsh/completion $fpath)
+# about self defined function/script
+# https://unix.stackexchange.com/questions/429169/how-to-make-custom-zsh-script-executable-automatically 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 ##########################################
@@ -89,6 +91,14 @@ alias gcc='gcc-12'
 alias venv='python3 -m venv venv'
 alias active='source venv/bin/activate && which python3'
 alias aria='aria2c'
+alias ze='z -e'
+alias openf='open -R'
+openz(){
+	if [ -n "$1" ] ; then
+		local var=$(z -e $1)
+		open $var
+	fi
+}
 
 setopt no_nomatch #可在程序里继续匹配
 setopt SHARE_HISTORY #TTY 共享 history
