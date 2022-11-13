@@ -49,6 +49,8 @@ set mouse=a
 set mousefocus " focus follow mouse not working
 set hidden " Hide buffers when they are abandoned
 set nocompatible " Set compatibility to Vim only.
+set wildmode=longest:full,full " auto completion cmd
+
 
 " ##################
 " window
