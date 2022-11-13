@@ -44,18 +44,17 @@ zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 plugins=(
 	git
 	zsh-syntax-highlighting
-	osx
+	osx # mac only
 	docker
 	docker-compose
 	zsh-autosuggestions
 	sudo
-	vscode
-	z
+	vscode 
+	z 
 	ssh-agent
-## iterm plug-in
-# https://iterm2.com/documentation-shell-integration.html
-	iterm2_shell_integration
+## iterm plug-in # mac only
 # extract: not installed yet
+    fzf 
 	)
 
 # come with ssh-agent plugin
@@ -70,11 +69,21 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
+# FZF
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf
+# https://github.com/junegunn/fzf#tips
+# need brew install fd
+#export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_BASE=/usr/local/bin/fzf
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export OPENER='Finder'
+  export EDITOR='mvim -f'
 fi
 
 # Compilation flags
@@ -82,6 +91,7 @@ export ARCHFLAGS="-arch x86_64"
 
 # For a full list of active aliases, run `alias`.
 alias lac="colorls -lA --sd"
+alias ls='nnn -de' # needs nnn
 alias rm=trash
 alias ssha="eval '$(ssh-agent -s)' && ssh-add -A"
 alias vim="mvim -v"
@@ -99,10 +109,13 @@ openz(){
 		open $var
 	fi
 }
+alias vimc='vim -u NONE'
+# something wrong with pip/pip3
+alias pip='python3 -m pip'
 
 setopt no_nomatch #可在程序里继续匹配
+setopt nonomatch # match with *
 setopt SHARE_HISTORY #TTY 共享 history
-setopt nonomatch
 
 # >>>>>>>>>>>> mujo >>>>>>>>>>
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
@@ -176,11 +189,80 @@ alias python=/usr/local/bin/python3
 
 # >>>> brew 
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# >>>> vi-mode setting
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
+# https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
+# cursor in iTerm2 can't change
+# https://iterm2.com/documentation-escape-codes.html
+#VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+#VI_MODE_SET_CURSOR=true
+#export KEYTIMEOUT=1
+## MODE_INDICATOR="%F{white}+%f"
+## INSERT_MODE_INDICATOR="%F{yellow}+%f"
+#bindkey -v
+#function zle-keymap-select {
+#  if [[ ${KEYMAP} == vicmd ]] ||
+#     [[ $1 = 'block' ]]; then
+#    echo -ne '\e[1 q'
+#  elif [[ ${KEYMAP} == main ]] ||
+#       [[ ${KEYMAP} == viins ]] ||
+#       [[ ${KEYMAP} = '' ]] ||
+#       [[ $1 = 'beam' ]]; then
+#    echo -ne '\e[5 q'
+#  fi
+#}
+
+# >>>> iterm setting
+# https://iterm2.com/documentation-shell-integration.html
+source /Users/cd/.iterm2_shell_integration.zsh
+
+# >>>>>>> nnn config
+n ()
+{
+    # Block nesting of nnn in subshells
+    if [[ "${NNNLVL:-0}" -ge 1 ]]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
+    # see. To cd on quit only on ^G, remove the "export" and make sure not to
+    # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
+    #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    # The backslash allows one to alias n to nnn if desired without making an
+    # infinitely recursive alias
+    \nnn "$@"
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+BLK="0B" CHR="0B" DIR="04" EXE="06" REG="00" HARDLINK="06" SYMLINK="06" MISSING="00" ORPHAN="09" FIFO="06" SOCK="0B" OTHER="06"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+
+export NNN_PLUG='z:autojump;c:cdpath;d:dragdrop;f:fixname;o:openall;v:x2sel'
+
+# <<<<<<<<<<<<
+#
+# >>>>>>>Chromium>>>>>>>
+export GOOGLE_API_KEY="no"
+export GOOGLE_DEFAULT_CLIENT_ID="no"
+export GOOGLE_DEFAULT_CLIENT_SECRET="no"
+# <<<<<<<<<<<<<<
   ;;
 ################################################
   Linux)
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
 ENABLE_CORRECTION="true"
 HIST_STAMPS="mm/dd/yyyy"
 # Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
@@ -197,8 +279,12 @@ plugins=(
 	sudo
 	vscode
 	z
+#    vi-mode don't use it. conflicts with ctrl-R; may needs how to exit it
 	# extract: not installed yet
 )
 source $ZSH/oh-my-zsh.sh
 ;;
 esac
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+

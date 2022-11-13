@@ -1,25 +1,34 @@
-# from https://docs.docker.com/install/linux/docker-ce/debian/
+# 2022/Nov
+# https://docs.docker.com/engine/install/debian/
 echo "remove remaining"
-sudo apt-get remove docker docker-engine docker.io -yqq
+sudo apt-get remove docker docker-engine docker.io containerd runc
 
-echo "install essential"
-sudo apt update
-sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common -yqq
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io -yqq
+echo "install dependence"
+sudo apt-get update -yqq
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release -yqq
+
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+echo "install docker now"
+sudo apt-get update -yqq
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -yqq
 
 echo "enable daemon"
 sudo systemctl enable --now docker
 
-echo "install docker-compose"
-sudo apt install curl wget -yqq
-curl -s https://api.github.com/repos/docker/compose/releases/latest | grep browser_download_url  | grep docker-compose-linux-x86_64 | cut -d '"' -f 4 | wget -qi -
-chmod +x docker-compose-linux-x86_64
-sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
-rm docker*
-
+# non-root mode
+# https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
 echo "add current user to docker group"
+sudo groupadd docker
 sudo usermod -aG docker $USER
+# active changes to group
 newgrp docker

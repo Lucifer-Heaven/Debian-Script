@@ -3,7 +3,6 @@
 #!/bin/bash
 
 sudo apt update -yqq
-# apt-get remove vim* -y
 
 echo "install vim git"
 sudo apt install vim git -yqq
@@ -13,8 +12,8 @@ sudo apt install vim git -yqq
 # echo "install tree"
 # sudo apt install tree -y
 #
-# echo "install lrzsz"
-# sudo apt install lrzsz -y
+echo "install lrzsz"
+sudo apt install lrzsz -yqq
 #
 # echo "install nginx"
 # sudo apt install nginx -y
@@ -28,4 +27,4 @@ chsh -s $(which zsh)
 echo "install oh my zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-sudo reboot
+echo "all set, login again to check default shell "
